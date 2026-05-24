@@ -88,8 +88,23 @@ cd pipeline_producer-consumer && python3 producer.py
 
 ## Evidências de execução
 
-Prints da execução de cada um dos três experimentos serão anexados abaixo:
+As três aplicações foram executadas em 3 instâncias EC2 distintas
+(HostA `3.237.77.167`, HostB `13.223.101.83`, HostC `3.236.161.55`).
 
-- client-server: _print pendente_
-- pub-sub: _print pendente_
-- pipeline: _print pendente_
+### client-server
+
+| HostA — `server.py`                       | HostB — `client.py`                       |
+| ----------------------------------------- | ----------------------------------------- |
+| ![](img/client-server-HostA.png)          | ![](img/client-server-HostB.png)          |
+
+### pub-sub
+
+| HostA — `publisher.py`             | HostB — `subscriber.py TEMP`        | HostC — `subscriber.py PRESS`       |
+| ---------------------------------- | ----------------------------------- | ----------------------------------- |
+| ![](img/pub-sub-HostA.png)         | ![](img/pub-sub-HostB.png)          | ![](img/pub-sub-HostC.png)          |
+
+### pipeline (3 estágios)
+
+| HostA — `producer.py`                | HostB — `worker.py`                  | HostC — `consumer.py`                |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| ![](img/pipeline-HostA.png)          | ![](img/pipeline-HostB.png)          | ![](img/pipeline-HostC.png)          |
